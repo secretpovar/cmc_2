@@ -32,9 +32,8 @@ double r(double a)
 double integral(double (*f)(double), double a, double b, double eps2)
 {
     int n = 10;
-    int f1 = 0;
-    int f2 = 0;
-    int j = 0;
+    double f1 = 0;
+    double f2 = 0;
     double nsum(int n, double (*f)(double), double a, double b)
     {
         double h = (b-a)/n;
