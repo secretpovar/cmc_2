@@ -83,7 +83,7 @@ int main (void)
     printf("root: f = x^3, g = 64, a = 0, b = 100, eps1 = 0.00001: \n");
     double b = root(f, g, 0, 100, 0.00001);
     printf("%f\n", b);
-    printf("root: f = -x^2, g = -16, a = 1, b = 20, eps1 = 0.0001: \n");
+    printf("root: f = -x^2, g = -25, a = 1, b = 20, eps1 = 0.0001: \n");
     b = root(f2, g2, 1, 20, 0.0001);
     printf("%f\n", b);
     printf("integral: x^2-3, a = -10, b = 10, eps2 = 0.00001\n");
