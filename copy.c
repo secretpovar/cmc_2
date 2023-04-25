@@ -27,7 +27,7 @@ double root(double (*f)(double), double (*g)(double), double a, double b, double
 }
 double r(double a)
 {
-    return a*a;
+    return a*a - 3;
 }
 double integral(double (*f)(double), double a, double b, double eps2)
 {
@@ -62,15 +62,35 @@ double f(double x)
 {
     return (x*x)*x;
 }
+double f2(double x)
+{
+    return -(x*x);
+}
 double g(double x)
 {
     return 64;
 }
+double g2(double x)
+{
+    return -25;
+}
+double r2(double x)
+{
+    return 1/x;
+}
 int main (void)
 {
+    printf("root: f = x^3, g = 64, a = 0, b = 100, eps1 = 0.00001: \n");
     double b = root(f, g, 0, 100, 0.00001);
     printf("%f\n", b);
-    double a = integral(r, -10, 10, 0.00001);
-    printf("%f", a);
+    printf("root: f = -x^2, g = -16, a = 1, b = 20, eps1 = 0.0001: \n");
+    b = root(f2, g2, 1, 20, 0.0001);
+    printf("%f\n", b);
+    printf("integral: x^2-3, a = -10, b = 10, eps2 = 0.00001\n");
+    b = integral(r, -10, 10, 0.00001);
+    printf("%f\n", b);
+    printf("integral: 1/x, a = 1, b = 12, eps2 = 0.001\n");
+    b = integral(r2, 1, 12, 0.001);
+    printf("%f", b);
     return 0;
 }
