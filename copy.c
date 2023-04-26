@@ -2,10 +2,6 @@
 #include <math.h>
 double root(double (*f)(double), double (*g)(double), double a, double b, double eps1)
 {
-    double F(double x)
-    {
-        return f(x) - g(x);
-    }
     if (((f(a) - g(a))*(f((a+b)/2) - g((a+b)/2) - (f(a) - g(a) + f(b) - g(b))/2)) > 0)
     {
         double c = (a*(f(b) - g(b)) - b*(f(a) - g(a)))/(f(b) - g(b) - f(a) + f(b));
